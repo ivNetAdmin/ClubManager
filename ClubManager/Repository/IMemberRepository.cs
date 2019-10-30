@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ClubManager.Models;
+
+namespace ClubManager.Repository
+{
+    public interface IMemberRepository : IRepository<Member>
+    {
+    }
+}

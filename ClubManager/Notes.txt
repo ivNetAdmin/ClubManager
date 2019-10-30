@@ -1,0 +1,58 @@
+﻿Use .Net Core 2.1
+This is because ??? is incompatible
+
+Edit *.csproj file to add support for Entity Framework
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+
+Edit package.json
+Add
+    "bootstrap": "4.0.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.4.1",
+    "popper.js": "1.12.9",
+
+
+Edit .angular-cli.json
+Add
+"styles": [
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.css"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/popper.js/dist/umd/popper.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ],
+
+Edit appsettings.json
+Add 
+  "Production": {
+    "SqliteConnectionString": "Data Source=club.sqlite"
+  },
+
+Edit Startup.cs
+Add
+
+Create intitial database code (migration)
+-- dotnet ef migrations add InitialCreate
+
+Drop database
+-- dotnet ef database drop
+
+Apply a migration
+-- dotnet ef database update

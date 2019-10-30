@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  overflow-x: hidden;
+}
+
+
+/*Sidebar*/
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+/*Homepage*/
+@media (min-width: 768px) {
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+}
