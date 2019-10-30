@@ -1,0 +1,6 @@
+<div class="container-fluid">
+  <h1>All Members</h1>
+
+  <p *ngIf="!members"><em>Loading...</em></p>
+  <button class="btn btn-success" [routerLink]='["/add-member"]'>Add</button>
+</div>
