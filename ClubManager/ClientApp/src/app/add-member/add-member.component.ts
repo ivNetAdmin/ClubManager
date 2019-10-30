@@ -11,5 +11,7 @@ export class AddMemberComponent {
 
   setMemberType(type) {
     console.log(type);
+
+    this.memberForm.nativeElement.classList.toggle('junior');
   }
 }
