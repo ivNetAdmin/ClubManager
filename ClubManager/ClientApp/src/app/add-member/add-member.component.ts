@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-add-member',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AddMemberComponent {
 
+  @ViewChild("memberForm") memberForm;
+
+  setMemberType(type) {
+    console.log(type);
+  }
 }
