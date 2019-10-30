@@ -7,11 +7,12 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AddMemberComponent {
 
+  MemberType = "Adult";
+
   @ViewChild("memberForm") memberForm;
 
   setMemberType(type) {
-    console.log(type);
-
+    this.MemberType = type;
     this.memberForm.nativeElement.classList.toggle('junior');
   }
 }

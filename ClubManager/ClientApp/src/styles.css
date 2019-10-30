@@ -22,8 +22,3 @@ body {
     width: 100%;
   }
 }
-
-/*Add Member*/
-#memberForm.junior .hide-junior {
-  display: none;
-}

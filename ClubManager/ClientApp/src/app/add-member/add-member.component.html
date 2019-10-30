@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <h1>New Member</h1>
+  <h1>New Member - {{MemberType}}</h1>
   <form>
     <div #memberForm class="accordion" id="memberForm">
       <div class="card">
@@ -13,14 +13,14 @@
         <div id="collapseMemberType" class="collapse show" aria-labelledby="headingMemberType" data-parent="#memberForm">
           <div class="card-body">
             <div class="form-group">
-              <label>Type</label> 
+              <label>Type</label>
               <div>
                 <div class="custom-control custom-radio custom-control-inline">
-                  <input name="memberType" id="memberType_0" type="radio" class="custom-control-input" value="fullMember" required="required" [checked]='true' (click)="setMemberType('full')"> 
-                  <label for="memberType_0" class="custom-control-label">Full</label>
+                  <input name="memberType" id="memberType_0" type="radio" class="custom-control-input" value="fullMember" required="required" [checked]='true' (click)="setMemberType('Full')">
+                  <label for="memberType_0" class="custom-control-label">Adult</label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
-                  <input name="memberType" id="memberType_1" type="radio" class="custom-control-input" value="juniorMember" required="required" (click)="setMemberType('junior')"> 
+                  <input name="memberType" id="memberType_1" type="radio" class="custom-control-input" value="juniorMember" required="required" (click)="setMemberType('Junior')">
                   <label for="memberType_1" class="custom-control-label">Junior</label>
                 </div>
               </div>
@@ -132,6 +132,21 @@
           </div>
         </div>
       </div>
+      <div class="card show-junior">
+        <div class="card-header" id="headingGuardian">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseGuardian" aria-expanded="false" aria-controls="collapseGuardian">
+              Guardian
+            </button>
+          </h2>
+        </div>
+        <div id="collapseGuardian" class="collapse" aria-labelledby="headingGuardian" data-parent="#memberForm">
+          <div class="card-body">
+
+
+          </div>
+        </div>
+      </div>
       <div class="card">
         <div class="card-header" id="headingNotes">
           <h2 class="mb-0">
@@ -149,6 +164,11 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success" type="button">
+        Update Member List
+      </button>
     </div>
   </form>
     <!--<form>

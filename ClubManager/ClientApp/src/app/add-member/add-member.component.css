@@ -1,0 +1,13 @@
+.show-junior
+{
+  display: none;
+}
+
+/*Add Member*/
+#memberForm.junior .hide-junior {
+  display: none;
+}
+
+#memberForm.junior .show-junior {
+  display: inherit;
+}
