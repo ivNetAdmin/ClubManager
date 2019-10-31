@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { FetchMembersComponent } from './fetch-members/fetch-members.component';
-import { AddMemberComponent } from './add-member/add-member.component';
+import { MemberFormComponent } from './member-form/member-form.component';
+import { MemberRegisterComponent } from './member-register/member-register.component';
 
 @NgModule({
   declarations: [
@@ -17,17 +17,17 @@ import { AddMemberComponent } from './add-member/add-member.component';
     NavMenuComponent,
     HomeComponent,
     SideBarComponent,
-    FetchMembersComponent,
-    AddMemberComponent
+    MemberFormComponent,
+    MemberRegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-members', component: FetchMembersComponent },
-      { path: 'add-member', component: AddMemberComponent }
+      //{ path: ':id', component: HomeComponent, pathMatch: 'full' },
+      { path: 'member-register', component: MemberRegisterComponent }
     ])
   ],
   providers: [],

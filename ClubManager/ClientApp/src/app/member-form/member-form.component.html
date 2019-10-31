@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <h1>New Member - {{memberType}}</h1>
+
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="memberType">
+      <label>
+        Member Type:
+        <input type="radio" formControlName="type" value="adult"> Adult
+        <input type="radio" formControlName="type" value="junior"> Junior
+      </label>
+    </div>
+    <div formGroupName="name">
+      <label>
+        First Name:
+        <input type="text" formControlName="firstName">
+      </label>
+
+      <label>
+        Last Name:
+        <input type="text" formControlName="lastName">
+      </label>
+    </div>
+    <div formGroupName="address">
+      <h3>Address</h3>
+
+      <label>
+        Street:
+        <input type="text" formControlName="street">
+      </label>
+
+      <label>
+        Town:
+        <input type="text" formControlName="town">
+      </label>
+
+      <label>
+        Post Code:
+        <input type="text" formControlName="postcode">
+      </label>
+    </div>
+
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </form>
+</div>
